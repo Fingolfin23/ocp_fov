@@ -1,0 +1,4 @@
+-r requirements.txt
+shapely
+
+# Optional proof-PDF build dependencies are in docs/package.json.

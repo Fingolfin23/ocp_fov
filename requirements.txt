@@ -1,0 +1,8 @@
+# Geometry, track loading and existing visualizations.
+# Versions are not pinned: this is an import-derived dependency list,
+# not a validated environment lock for every historical experiment.
+numpy
+scipy
+pandas
+matplotlib
+Pillow

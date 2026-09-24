@@ -1,0 +1,6 @@
+{
+  "private": true,
+  "description": "Optional dependencies for rebuilding the mathematical note PDF",
+  "scripts": {"build:proof": "node build_proof.cjs"},
+  "dependencies": {"katex": "0.16.22", "marked": "17.0.5", "playwright": "1.62.1"}
+}

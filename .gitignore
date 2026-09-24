@@ -1,0 +1,16 @@
+# Local Python environments and caches
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ipynb_checkpoints/
+
+# Local operating-system files
+.DS_Store
+
+# Optional documentation build dependencies
+docs/node_modules/
+
+# Generated documentation figures, animations and PDFs are intentionally
+# not ignored: they are part of the repository presentation.

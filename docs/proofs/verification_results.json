@@ -1,0 +1,68 @@
+{
+  "purpose": "Analytic sanity checks; not a proof by testing and not the complete report pipeline.",
+  "seed": 20260922,
+  "same_side_pocket": {
+    "centerline": "c(s)=(s,0), 0<=s<=8",
+    "left_width": "0.2*s+0.01*(s-2)^2*(6-s)",
+    "right_width": 1.0,
+    "T": [
+      2.0,
+      0.4
+    ],
+    "U": [
+      6.0,
+      1.2
+    ],
+    "oracle": "Exact cubic minimum along each sight segment",
+    "samples": 10000,
+    "skipped_near_boundary": 0,
+    "mismatches": 0,
+    "first_mismatches": []
+  },
+  "opposite_side_front": {
+    "center_radius": 10.0,
+    "half_width": 1.0,
+    "window": 15.0,
+    "s_T": 4.510268117962624,
+    "s_U": 10.635815501356012,
+    "T": [
+      3.9230090491866054,
+      1.9000000000000004
+    ],
+    "U": [
+      9.615108837489688,
+      4.656809750418043
+    ],
+    "oracle": "Exact minimum distance of sight segment to inner-circle center",
+    "samples": 10000,
+    "skipped_near_boundary": 0,
+    "mismatches": 0,
+    "first_mismatches": []
+  },
+  "fixed_tolerance_near_tangent": [
+    {
+      "station_step": 0.1,
+      "alignment_ratio": 0.005000041667075489,
+      "accepted_by_fixed_epsilon_1e-3": false,
+      "is_exact_second_intersection": false
+    },
+    {
+      "station_step": 0.01,
+      "alignment_ratio": 0.0005000000416532038,
+      "accepted_by_fixed_epsilon_1e-3": true,
+      "is_exact_second_intersection": false
+    },
+    {
+      "station_step": 0.001,
+      "alignment_ratio": 4.9999999603378614e-05,
+      "accepted_by_fixed_epsilon_1e-3": true,
+      "is_exact_second_intersection": false
+    },
+    {
+      "station_step": 0.0001,
+      "alignment_ratio": 4.999991411913892e-06,
+      "accepted_by_fixed_epsilon_1e-3": true,
+      "is_exact_second_intersection": false
+    }
+  ]
+}

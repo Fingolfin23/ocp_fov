@@ -1,0 +1,5 @@
+-r requirements.txt
+casadi
+
+# Some historical OCP entries additionally need the external
+# obstacle_avoidance package and obstacle CSVs; see docs/code_map.md.

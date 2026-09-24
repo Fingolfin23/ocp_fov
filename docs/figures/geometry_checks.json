@@ -1,0 +1,69 @@
+{
+  "scope": "Numerical checks of an illustrative smooth road, not verification of the original source pipeline.",
+  "road": {
+    "R": 10.0,
+    "H": 18.0,
+    "left_width_range": [
+      0.8,
+      2.5000005795927325
+    ],
+    "right_width_range": [
+      0.8000005105295421,
+      2.40000000001528
+    ],
+    "injectivity_reason": "polar angle s/R in [0,1.8] and all radii positive; each station is a distinct radial fibre",
+    "polygon_is_valid": true
+  },
+  "events": [
+    {
+      "event": "T1",
+      "tangent_station": 1.8965336584811472,
+      "same_hit": 4.875193477063869,
+      "opposite_hit": 13.084489242800029,
+      "classification": "same-side pocket",
+      "tangency_residual": 8.881784197001252e-16,
+      "hit_alignment_residual": 7.993605777301127e-15,
+      "cut_minimum_sampled_interior_margin": 1.3316209974689741e-05,
+      "cut_station_strictly_increasing": true
+    },
+    {
+      "event": "T2",
+      "tangent_station": 5.996137578422292,
+      "same_hit": null,
+      "opposite_hit": 10.306371230324281,
+      "classification": "opposite-side front",
+      "tangency_residual": 4.263256414560601e-14,
+      "hit_alignment_residual": 3.552713678800501e-15,
+      "cut_minimum_sampled_interior_margin": 3.3414545823617914e-05,
+      "cut_station_strictly_increasing": true
+    },
+    {
+      "event": "T3",
+      "tangent_station": 10.848432450084726,
+      "same_hit": null,
+      "opposite_hit": 14.954957665908813,
+      "classification": "opposite-side front",
+      "tangency_residual": 1.5276668818842154e-13,
+      "hit_alignment_residual": 0.0,
+      "cut_minimum_sampled_interior_margin": 4.266811664344061e-05,
+      "cut_station_strictly_increasing": true
+    }
+  ],
+  "selected_FPV_station": 10.306371230324281,
+  "visible_area_m2": 19.92603542515068,
+  "local_pocket_area_m2": 1.3493235409552637,
+  "independent_oracle": {
+    "method": "Continuous line-of-sight radial clearances; dense bracketing plus local bounded minimization",
+    "seed": 20260924,
+    "samples": 4000,
+    "near_boundary_skipped": 0,
+    "mismatches": 0,
+    "examples": []
+  },
+  "limitations": [
+    "Numerical event enumeration and oracle checks are not a formal certificate.",
+    "No actual-track performance, OCP trajectory, sensor noise or speed improvement is claimed.",
+    "Figures assume opaque road exterior and no internal occluders.",
+    "T3 is intentionally retained as a hidden, redundant global-front candidate."
+  ]
+}
