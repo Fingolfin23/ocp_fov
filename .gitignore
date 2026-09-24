@@ -14,3 +14,9 @@ docs/node_modules/
 
 # Generated documentation figures, animations and PDFs are intentionally
 # not ignored: they are part of the repository presentation.
+
+# Reproducible local outputs, not needed in the published repository
+/fov_cache.npz
+/monza_930.png
+/docs/proofs/geometric_visibility_proofs.html
+/docs/proofs/build_check.json

@@ -119,4 +119,4 @@ See the [Chinese visual guide](docs/visual_guide_zh.md) for the event values and
 | `OPT_LAPTIME_FULLFOV.py` | Original FOV-constrained lap-time experiment |
 | [Code map](docs/code_map.md) | All modules, historical variants and data dependencies |
 
-The original experiment files and their paths are preserved. Optimization experiments additionally require `requirements-ocp.txt`; some entries need external modules and data not included here. They are not presented as a validated one-command reproduction. Read the [implementation notes](docs/implementation_notes.md) before interpreting their planning results.
+The retained experiment entry points keep their existing paths; duplicate backups and empty placeholders have been removed. Optimization experiments additionally require `requirements-ocp.txt`; some entries need external modules and data not included here. They are not presented as a validated one-command reproduction. Read the [implementation notes](docs/implementation_notes.md) before interpreting their planning results.

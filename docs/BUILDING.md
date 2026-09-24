@@ -28,7 +28,7 @@ python -m pip install -r requirements-docs.txt
 python scripts/generate_monza_replay.py --track Monza.csv --out docs/animations --figures docs/figures
 ```
 
-This generates a 30-second MP4, a looping README GIF, a poster and a numerical check summary. The video encoder is provided by `imageio-ffmpeg`. The original root-level GIFs and caches are preserved. See [Monza replay notes](monza_replay.md) for the periodic road construction and the distinction between sampled algorithm markers and reference visibility shading.
+This generates a 30-second MP4, a looping README GIF, a poster and a numerical check summary. The video encoder is provided by `imageio-ffmpeg`. The original root-level GIFs and JSON cache are preserved. See [Monza replay notes](monza_replay.md) for the periodic road construction and the distinction between sampled algorithm markers and reference visibility shading.
 
 ## Mathematical note PDF
 
@@ -49,7 +49,7 @@ Alternatively, use an already installed Chromium-based browser. For example, on 
 CHROME_EXECUTABLE='/Applications/Google Chrome.app/Contents/MacOS/Google Chrome' npm run build:proof
 ```
 
-The builder typesets the formulas with KaTeX, embeds the math fonts and example image into a standalone HTML file, and prints the PDF with Chromium. It checks formula parsing and display-equation overflow, and saves `build_check.json`. The HTML file also provides a browser-readable copy without needing a math-rendering service. The English note uses standard serif and sans-serif fonts; mathematical fonts are embedded.
+The builder typesets the formulas with KaTeX, embeds the math fonts and example image into a standalone HTML file, and prints the PDF with Chromium. It checks formula parsing and display-equation overflow, and saves `build_check.json`. The HTML file also provides a browser-readable copy without needing a math-rendering service. HTML and `build_check.json` are local build outputs ignored by Git; the English Markdown source and PDF remain checked in. The English note uses standard serif and sans-serif fonts; mathematical fonts are embedded.
 
 After changing the mathematical content, review the formulas and rendered PDF pages. Passing a build is a formatting check, not a proof of mathematical correctness.
 
@@ -60,6 +60,18 @@ Edition: 2026-09-24.
 - The new single-viewpoint example was exercised against the original geometry module on Monza at `s0 = 930 m`.
 - The demonstration road's three cuts were checked for alignment and forward station order; 4,000 randomly sampled points agreed with an independent line-of-sight calculation.
 - Both animations and all three static figures were visually inspected. The figure generator was rerun from the packaged script paths.
-- The English PDF was rendered and visually inspected, with formula parsing and display-equation overflow checks recorded in `docs/proofs/build_check.json`.
+- The English PDF was rendered and visually inspected, with formula parsing and display-equation overflow checks. Rebuilding produces a local `docs/proofs/build_check.json` log.
 
 The original full OCP experiments were not rerun in this documentation edition. Their external data and implementation issues are listed in [implementation notes](implementation_notes.md).
+
+## Local outputs removed from version control
+
+The compact `fov_cache.npz` duplicates arrays in the retained JSON and has no current consumer. The existing cache generator still writes it when run. The old `monza_930.png` snapshot can be recreated from the JSON:
+
+```bash
+MPLBACKEND=Agg python plot_fov.py --csv Monza.csv --cache fov_cache.json \
+  --s0 930 --mode segment --markers --fill --show-tangent-rays \
+  --save monza_930.png
+```
+
+These two outputs, the proof HTML and its build log are ignored by Git. Presentation images, vector figures, all GIFs, the MP4 and the proof PDF remain checked in.
