@@ -47,19 +47,13 @@ The region before the front can still contain a blind pocket. Keeping the full e
 
 These explanatory figures and animations use recomputed illustrative geometry based on the constructions in Section 6.3 and Figure 12 of Yanxing Chen's report, *Safety Ensured Driving with Predefined Field of View*. They are not reproductions of the original Monza experiment or new closed-loop planning results.
 
-## Original track animations
+## Original track animation
 
-Both original GIFs are preserved and displayed here alongside the new full-lap replay.
-
-### Legacy replay — `fov_follow_b.gif`
+The original following-view animation is retained alongside the new full-lap replay.
 
 ![Preserved original FOV following-view animation, version b](fov_follow_b.gif)
 
-### Legacy replay — `fov_follow.gif`
-
-![Preserved original FOV following-view animation](fov_follow.gif)
-
-Their implementation context is documented in the [code map](docs/code_map.md) and [implementation notes](docs/implementation_notes.md).
+Its implementation context is documented in the [code map](docs/code_map.md) and [implementation notes](docs/implementation_notes.md).
 
 ## Mathematical note
 

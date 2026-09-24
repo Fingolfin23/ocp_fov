@@ -42,7 +42,7 @@
 - `Monza.csv`、`Nuerburgring.csv`：中心线与道路宽度；列为 `# x_m,y_m,w_tr_right_m,w_tr_left_m`。
 - `fov_cache.json`：原有 Monza 示例缓存，共 1,158 个观察位置，间距 5 m，前向查询窗口 200 m。
 - `fov_cache.npz`：可由缓存生成器重建；与 JSON 对应数组相同且没有当前读取入口，因此不再入库。
-- `fov_follow.gif`、`fov_follow_b.gif`：两份原有展示，保留原位置并在 README 中直接显示。
+- `fov_follow_b.gif`：保留的原有跟随视角展示，在 README 中直接显示。
 - `docs/figures/`：首页 PNG、论文用 SVG、Monza 海报及数值检查记录。
 - `docs/animations/`：教学动图与 Monza 全圈 GIF／高清 MP4。
 - `docs/proofs/`：英文证明 PDF、可编辑源稿、三份扩展推导及解析例子的验证材料。

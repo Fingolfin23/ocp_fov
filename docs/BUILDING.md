@@ -28,7 +28,7 @@ python -m pip install -r requirements-docs.txt
 python scripts/generate_monza_replay.py --track Monza.csv --out docs/animations --figures docs/figures
 ```
 
-This generates a 30-second MP4, a looping README GIF, a poster and a numerical check summary. The video encoder is provided by `imageio-ffmpeg`. The original root-level GIFs and JSON cache are preserved. See [Monza replay notes](monza_replay.md) for the periodic road construction and the distinction between sampled algorithm markers and reference visibility shading.
+This generates a 30-second MP4, a looping README GIF, a poster and a numerical check summary. The video encoder is provided by `imageio-ffmpeg`. The original `fov_follow_b.gif` and JSON cache are preserved. See [Monza replay notes](monza_replay.md) for the periodic road construction and the distinction between sampled algorithm markers and reference visibility shading.
 
 ## Mathematical note PDF
 

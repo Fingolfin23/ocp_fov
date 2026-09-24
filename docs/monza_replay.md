@@ -59,6 +59,6 @@ python scripts/generate_monza_replay.py \
 
 ## 原动图
 
-仓库根目录中的 [`fov_follow_b.gif`](../fov_follow_b.gif) 和 [`fov_follow.gif`](../fov_follow.gif) 均予以保留，并在 README 中直接展示。新全圈动图作为补充，不覆盖这两份历史演示。
+仓库根目录中的 [`fov_follow_b.gif`](../fov_follow_b.gif) 予以保留，并在 README 中直接展示。新全圈动图作为补充。
 
 几何定理及其适用条件见 [English correctness proofs](proofs/geometric_visibility_proofs.pdf)。现有离散实现与数学模型的关系见 [implementation notes](implementation_notes.md)。
