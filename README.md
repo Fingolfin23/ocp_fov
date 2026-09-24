@@ -4,9 +4,19 @@ Geometry-based field of view for road-constrained driving, integrated with Frene
 
 This research prototype studies how road-boundary tangencies determine the farthest visible road station and the blind regions that remain before it. The key is to compare boundary intersections using a **shared longitudinal road coordinate**, then retain the events needed to describe the full visible region.
 
-![Two-stage comparison of aligned boundary intersections](docs/figures/02_two_stage_selection.png)
+## Monza: one lap through the geometry
+
+A full-circuit overview, a moving close-up and the road-station trace show how the visibility geometry changes around Monza.
+
+![Full-lap Monza replay with a circuit overview, following camera and visibility trace](docs/animations/monza_full_lap.gif)
+
+[Watch or download the high-resolution MP4](docs/animations/monza_full_lap.mp4) · [View the poster](docs/figures/monza_full_lap_poster.png) · [How to read and reproduce the replay](docs/monza_replay.md)
+
+The replay advances uniformly in road station. Tangency (ITP) and front (FPV) markers come from the existing geometry algorithm; the shaded line-of-sight region is a separate rendering reference. Dashed gold lines and `REFERENCE DIFFERS` flag disagreements with that reference. This is a geometric replay, not a simulated driving speed or a closed-loop control result.
 
 ## The idea
+
+![Two-stage comparison of aligned boundary intersections](docs/figures/02_two_stage_selection.png)
 
 1. **Find tangent events.** Local extrema of boundary bearing identify candidate tangencies from the observation point.
 2. **Compare both boundaries along the same ray.** Compare the first eligible same-side and opposite-side hits by their shared road station. A same-side return creates a local blind pocket; an opposite-side hit creates a cross-road visibility front.
@@ -37,14 +47,19 @@ The region before the front can still contain a blind pocket. Keeping the full e
 
 These explanatory figures and animations use recomputed illustrative geometry based on the constructions in Section 6.3 and Figure 12 of Yanxing Chen's report, *Safety Ensured Driving with Predefined Field of View*. They are not reproductions of the original Monza experiment or new closed-loop planning results.
 
-<details>
-<summary>Original track visualization</summary>
+## Original track animations
 
-![Original checked-in FOV track animation](fov_follow_b.gif)
+Both original GIFs are preserved and displayed here alongside the new full-lap replay.
 
-This is the repository's original visualization artifact. Its implementation context is documented in the [code map](docs/code_map.md) and [implementation notes](docs/implementation_notes.md).
+### Legacy replay — `fov_follow_b.gif`
 
-</details>
+![Preserved original FOV following-view animation, version b](fov_follow_b.gif)
+
+### Legacy replay — `fov_follow.gif`
+
+![Preserved original FOV following-view animation](fov_follow.gif)
+
+Their implementation context is documented in the [code map](docs/code_map.md) and [implementation notes](docs/implementation_notes.md).
 
 ## Mathematical note
 
@@ -81,6 +96,15 @@ python -m pip install -r requirements-docs.txt
 python scripts/generate_idea_visuals.py \
   --out docs/figures --animations docs/animations
 ```
+
+To regenerate the Monza full-lap replay:
+
+```bash
+python scripts/generate_monza_replay.py \
+  --track Monza.csv --out docs/animations --figures docs/figures
+```
+
+See the [Monza replay notes](docs/monza_replay.md) for the input geometry, plotting conventions and output formats.
 
 See the [Chinese visual guide](docs/visual_guide_zh.md) for the event values and geometry checks, and [build instructions](docs/BUILDING.md) for the optional PDF rebuild. The PDF is already included; rebuilding it is not needed to run the geometry example.
 

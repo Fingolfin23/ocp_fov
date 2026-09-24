@@ -21,6 +21,15 @@ python docs/proofs/verify_examples.py
 
 This refreshes `proof_examples.png` and `verification_results.json` beside the proof source. These example checks do not validate the original sampled pipeline on all road geometries.
 
+## Full-lap Monza replay
+
+```bash
+python -m pip install -r requirements-docs.txt
+python scripts/generate_monza_replay.py --track Monza.csv --out docs/animations --figures docs/figures
+```
+
+This generates a 30-second MP4, a looping README GIF, a poster and a numerical check summary. The video encoder is provided by `imageio-ffmpeg`. The original root-level GIFs and caches are preserved. See [Monza replay notes](monza_replay.md) for the periodic road construction and the distinction between sampled algorithm markers and reference visibility shading.
+
 ## Mathematical note PDF
 
 The master source is `docs/proofs/geometric_visibility_proofs.md`. The main note and its three companion Markdown notes are in English. The companion notes contain extended geometry, event and control derivations. The main PDF contains the geometric proofs and the essential planning-interface results; it is not a concatenation of all companion notes.
